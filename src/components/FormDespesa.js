@@ -14,7 +14,7 @@ class FormDespesa extends React.Component {
       pagamentos: '',
       tag: '',
       arrayPagamentos: ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'],
-      arrayTags: ['Lazer', 'Trabalho', 'Transporte', 'Saúde'],
+      arrayTags: ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'],
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -38,6 +38,7 @@ class FormDespesa extends React.Component {
         <label htmlFor="valor">
           Valor
           <input
+            nameInput="Valor"
             type="number"
             id="valor"
             onChange={ this.handleChange }
@@ -47,26 +48,30 @@ class FormDespesa extends React.Component {
         <label htmlFor="descricao">
           Descrição
           <input
-            type="text"
+            nameInput="Descrição"
             id="descricao"
+            type="text"
             onChange={ this.handleChange }
             value={ descricao }
           />
         </label>
         <SelectInput
-          name="moeda"
+          nameInput="Moeda"
+          id="moeda"
           onChange={ this.handleChange }
           value={ moeda }
           array={ currencies }
         />
         <SelectInput
-          name="pagamentos"
+          nameInput="Método de pagamento"
+          id="pagamentos"
           array={ arrayPagamentos }
           onChange={ this.handleChange }
           value={ pagamentos }
         />
         <SelectInput
-          name="tag"
+          nameInput="Tag"
+          id="tag"
           array={ arrayTags }
           onChange={ this.handleChange }
           value={ tag }

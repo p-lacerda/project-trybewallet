@@ -3,17 +3,19 @@ import propTypes from 'prop-types';
 
 class SelectInput extends React.Component {
   render() {
-    const { name, array, onChange, value } = this.props;
+    const { nameInput, array, onChange, value, id } = this.props;
     return (
-      <label htmlFor={ name }>
-        { name }
-        <select name={ name } id={ name } value={ value } onChange={ onChange }>
-          {array && array.map((arr, ind) => (
-            <option key={ ind }>
-              {
-                arr
-              }
-            </option>))}
+      <label htmlFor={ id }>
+        { nameInput }
+        <select name={ id } id={ id } value={ value } onChange={ onChange }>
+          {array && array
+            .filter((arr) => arr !== 'USDT')
+            .map((arr, ind) => (
+              <option key={ ind }>
+                {
+                  arr
+                }
+              </option>))}
         </select>
       </label>
     );
@@ -21,7 +23,8 @@ class SelectInput extends React.Component {
 }
 
 SelectInput.propTypes = {
-  name: propTypes.string.isRequired,
+  nameInput: propTypes.string.isRequired,
+  id: propTypes.string.isRequired,
   array: propTypes.arrayOf(String).isRequired,
   onChange: propTypes.func.isRequired,
   value: propTypes.string.isRequired,
