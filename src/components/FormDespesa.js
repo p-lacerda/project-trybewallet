@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import propTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -103,6 +102,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 FormDespesa.propTypes = {
   currencies: propTypes.arrayOf(String).isRequired,
+  addExpense: propTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(FormDespesa);

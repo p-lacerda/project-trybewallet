@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unused-state */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
@@ -23,7 +21,7 @@ class Header extends React.Component {
 
 Header.propTypes = {
   email: propTypes.objectOf(propTypes.any).isRequired,
-  // expenses: PropTypes.arrayOf(PropTypes.any).isRequired,
+  total: PropTypes.arrayOf(PropTypes.any).isRequired,
 };
 
 const mapStateToProps = (state) => ({
